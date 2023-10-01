@@ -1,14 +1,11 @@
-import { ShopController } from "./app/adapters/controllers/shopController";
-import { ShopDataStore } from "./app/adapters/drizzle/shopDrizzle";
-import { ShopRepository } from "./app/adapters/repositories/shopRepository";
-import { ElysiaDriver } from "./app/drivers/elysia";
-import { ShopStatic } from "./app/drivers/static/shopStatic";
-import { ServerDriver } from "./app/drivers/web";
-import { ShopListUsecase } from "./app/usecases/shopListUsecase";
-import { ShopReadUsecase } from "./app/usecases/shopReadUsecase";
-
-process.env.STORE_TYPE = "static";
-process.env.SERVER_TYPE = "elysia";
+import { ShopController } from "../app/adapters/controllers/shopController";
+import { ShopDataStore } from "../app/adapters/drizzle/shopDrizzle";
+import { ShopRepository } from "../app/adapters/repositories/shopRepository";
+import { ElysiaDriver } from "../app/drivers/elysia";
+import { ShopStatic } from "../app/drivers/static/shopStatic";
+import { ServerDriver } from "../app/drivers/web";
+import { ShopListUsecase } from "../app/usecases/shopListUsecase";
+import { ShopReadUsecase } from "../app/usecases/shopReadUsecase";
 
 const shopDataStore = (): ShopDataStore => {
   switch (process.env.STORE_TYPE) {
